@@ -52,6 +52,37 @@ body {
   margin-right: 0.5rem;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+}
+
+.logout-btn {
+  padding: 0.4rem 1rem;
+  background: rgba(255, 77, 77, 0.15);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 77, 77, 0.3);
+  color: white;
+}
+
 .header-stats {
   display: flex;
   gap: 1rem;
@@ -179,6 +210,12 @@ body {
   letter-spacing: 1px;
 }
 
+.loading-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-style: italic;
+}
+
 /* Liste */
 .todo-list {
   list-style: none;
@@ -197,6 +234,153 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s;
   backdrop-filter: blur(5px);
+}
+
+.todo-item span {
+  flex: 1;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 0.3rem 0.7rem;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1a1a2e;
+  outline: none;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.edit-btn, .save-btn, .cancel-btn {
+  padding: 0.4rem 0.6rem;
+  background: rgba(102, 126, 234, 0.15);
+  color: #a0b0ff;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.edit-btn:hover, .save-btn:hover {
+  background: rgba(102, 126, 234, 0.35);
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 77, 77, 0.25);
+  color: #ff6b6b;
+  border-color: rgba(255, 77, 77, 0.3);
+}
+
+/* Login page */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 380px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.login-card h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.login-card h2 {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1a1a2e;
+  transition: all 0.2s;
+}
+
+.login-form input:focus {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.login-form button {
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  margin-top: 0.3rem;
+}
+
+.login-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.login-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.login-error {
+  color: #ff6b6b;
+  font-size: 0.88rem;
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+}
+
+.login-hint {
+  margin-top: 1.4rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.82rem;
+}
+
+.login-hint strong {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .todo-item:hover {
@@ -241,13 +425,6 @@ body {
   flex-shrink: 0;
 }
 
-.todo-item span {
-  flex: 1;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  transition: all 0.2s;
-}
-
 .todo-item.completed {
   background: rgba(72, 199, 142, 0.08);
   border-color: rgba(72, 199, 142, 0.2);
@@ -256,25 +433,6 @@ body {
 .todo-item.completed span {
   text-decoration: line-through;
   color: rgba(255, 255, 255, 0.35);
-}
-
-.todo-item button {
-  padding: 0.4rem 0.9rem;
-  background: rgba(255, 77, 77, 0.1);
-  color: #ff6b6b;
-  border: 1px solid rgba(255, 77, 77, 0.25);
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.82rem;
-  font-weight: 600;
-  transition: all 0.2s;
-  flex-shrink: 0;
-}
-
-.todo-item button:hover {
-  background-color: #ff4d4d;
-  color: white;
-  border-color: #ff4d4d;
 }
 
 /* Message vide */
